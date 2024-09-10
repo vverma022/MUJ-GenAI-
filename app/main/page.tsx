@@ -14,23 +14,25 @@ export default function SimpleChatbox() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100 p-4">
-      <ScrollArea className="flex-1 mb-4">
+    <>
+      <div className="flex flex-col h-screen bg-gray-100 p-4">
+      <ScrollArea className="flex-1">
       </ScrollArea>
-      <div className="flex space-x-2">
+      <div className="flex space-x-1">
         <Input
-          type="text"
-          placeholder="Type your message..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === "Enter" && handleSend()}
-          className="flex-1 border"
+        type="text"
+        placeholder="Type your message..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyPress={(e) => e.key === "Enter" && handleSend()}
+        className="flex-1 border"
         />
         <Button onClick={handleSend} size="lg">
-          <SendIcon className="h-6 w-6" />
-          <span className="sr-only">Send</span>
+        <SendIcon className="h-6 w-6" />
+        <span className="sr-only">Send</span>
         </Button>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
